@@ -1,17 +1,40 @@
 <template>
   <div>
-    <!-- <button>Add Idea</button> -->
-    <router-link to="/create-idea">Add New Idea</router-link>
-    <div v-for="idea in ideas" :key="idea._id">
-      {{ idea.idea }} {{ idea.votes }}
-      <button @click="upVoteIdea(idea)">up vote</button>
-      <button @click="downVoteIdea(idea)">down vote</button>
-    </div>
+    <v-row>
+      <v-col>
+        <v-card
+          v-for="idea in ideas"
+          :key="idea._id"
+          class="mb-4"
+          max-width="344"
+          outlined
+        >
+          <v-card-text>
+            {{ idea.idea }}
+          </v-card-text>
+
+          <v-card-actions>
+            <v-btn @click="upVoteIdea(idea)">Up Vote</v-btn>
+            <div class="ml-4 mr-4">{{ idea.votes }}</div>
+            <v-btn @click="downVoteIdea(idea)">Down Vote</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-btn
+          @click="$router.push('/create-idea')"
+          light
+          color="blue"
+          class="white--text"
+          >Add New Idea</v-btn
+        >
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState } from "vuex";
 
 export default {
   name: "Home",
@@ -20,10 +43,10 @@ export default {
   },
   components: {},
   methods: {
-    ...mapActions(['getIdeas', 'upVoteIdea', 'downVoteIdea'])
+    ...mapActions(["getIdeas", "upVoteIdea", "downVoteIdea"])
   },
   computed: {
-    ...mapState(['ideas'])
+    ...mapState(["ideas"])
   }
 };
 </script>

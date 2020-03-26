@@ -9,16 +9,20 @@ exports.getClient = async () => {
   return new Promise((resolve, reject) => {
     if (!db) {
       // Use connect method to connect to the server
-        MongoClient.connect(url, function(err, client) {
+      MongoClient.connect(
+        url,
+        { useUnifiedTopology: true, useNewUrlParser: true },
+        function(err, client) {
           assert.equal(null, err);
           console.log("Connected successfully to server");
           db = client.db(dbName);
           resolve(db);
-        });
-      } else {
-        resolve(db);
-      }
-  })
+        }
+      );
+    } else {
+      resolve(db);
+    }
+  });
 };
 
 exports.close = () => {

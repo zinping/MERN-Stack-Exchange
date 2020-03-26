@@ -1,6 +1,6 @@
 # mevn-stack-exchange
 
-A MEVN Full-stack app using MongoDB, Express.js, Vue and Node.js.
+A MEVN full-stack app using MongoDB, Express.js, Vue and Node.js. User can create an idea and it is added to an ideas list. Each idea can be voted up and down with idea text and total votes shown in a Vue v-card.
 
 **Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -17,12 +17,12 @@ A MEVN Full-stack app using MongoDB, Express.js, Vue and Node.js.
 
 ## General info
 
-* The project is a MEVN full stack: a client-side for the frontend Vue framework and a server-side for the backend calls
+* The project as a client-side for the frontend Vue framework and a server-side for the backend calls
 * [Vue Router](https://router.vuejs.org/guide/essentials/navigation.html) used to navigate pages in browser
 * [Node.js MongoDB Driver API](http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#findOne) documentation used to create code for collection `find`, `findOne`, `insertOne`, etc.
-* [Vuex](https://vuex.vuejs.org/api/#vuex-store) store used to 
+* [Vuex](https://vuex.vuejs.org/api/#vuex-store) store used to hold application state
 
-### MongoDB shell commands
+## MongoDB shell commands
 
 * `mongo` - enter MongoDB console
 * `show dbs` - list databases
@@ -32,12 +32,12 @@ A MEVN Full-stack app using MongoDB, Express.js, Vue and Node.js.
 
 ## Screenshots
 
-![Vue frontend image](./img/vueFrontend.png)
-![backend image](./img/nodeBackend.png)
+![frontend image](./img/frontend.png)
+![backend image](./img/backend.png)
 
 ## Technologies - Backend
 
-* [MongoDB Atlas](https://www.mongodb.com/) using AWS Cloud storage.
+* [MongoDB](https://www.mongodb.com/) NoSQL document database.
 * [MongoDB v3.5.5](https://www.npmjs.com/package/mongodb) driver for Node.js
 * [Express v4.17.1](https://www.npmjs.com/package/express)
 * [Node.js v12.3.1](https://nodejs.org/en/)
@@ -47,7 +47,7 @@ A MEVN Full-stack app using MongoDB, Express.js, Vue and Node.js.
 * [Vue v2.6.11](https://vuejs.org/)
 * [Vuex v3.1.2](https://vuex.vuejs.org/) state management
 * [Vue.js devtools chrome extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
-* [Vuetify Material Design](https://vuetifyjs.com/en/)
+* [Vuetify Material Design](https://vuetifyjs.com/en/) for v-card, v-textarea etc-
 * [Axios v0.19.2](https://www.npmjs.com/package/axios)
 
 ## Setup - Backend
@@ -60,20 +60,43 @@ A MEVN Full-stack app using MongoDB, Express.js, Vue and Node.js.
 
 ## Code Examples - Backend
 
-* todo
+* extract from `db.js` - getClient method to connect to MongoDB database
 
 ```javascript
-
-
+exports.getClient = async () => {
+  return new Promise((resolve, reject) => {
+    if (!db) {
+      // Use connect method to connect to the server
+      MongoClient.connect(
+        url,
+        { useUnifiedTopology: true, useNewUrlParser: true },
+        function(err, client) {
+          assert.equal(null, err);
+          console.log("Connected successfully to server");
+          db = client.db(dbName);
+          resolve(db);
+        }
+      );
+    } else {
+      resolve(db);
+    }
+  });
+};
 ```
 
 ## Code Examples - Frontend
 
-* todo
+* extract from `index.js` to get list of ideas using the axios http get method
 
 ```javascript
+const getBasePath = () => {
+  return "http://localhost:5000";
+}
 
-
+export const getIdeas = async () => {
+  const { data: ideas } = await axios.get(`${getBasePath()}/ideas`);
+  return ideas;
+};
 ```
 
 ## Features
@@ -83,8 +106,8 @@ A MEVN Full-stack app using MongoDB, Express.js, Vue and Node.js.
 
 ## Status & To-Do List
 
-* Status: Working basic Vue frontend. Backend MongoDB database stores text send from frontend.
-* To-Do: complete front and backend.
+* Status: Working frontend & Backend MongoDB database stores idea objects with id, idea text and votes number.
+* To-Do: Fix issue: votes total on v-card does not update, even though votes total is corrrectly stored in the database.
 
 ## Inspiration
 

@@ -12,7 +12,7 @@ const routes = [
   },
   {
     path: "/create-idea",
-    name: "icreate-idea",
+    name: "Create-idea",
     component: () => import("../views/CreateIdea.vue")
   }
 ];
