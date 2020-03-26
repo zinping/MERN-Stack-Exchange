@@ -3,9 +3,9 @@
     <!-- <button>Add Idea</button> -->
     <router-link to="/create-idea">Add New Idea</router-link>
     <div v-for="idea in ideas" :key="idea._id">
-      {{ idea.idea }}
+      {{ idea.idea }} {{ idea.votes }}
       <button @click="upVoteIdea(idea)">up vote</button>
-      <button>down vote</button>
+      <button @click="downVoteIdea(idea)">down vote</button>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   components: {},
   methods: {
-    ...mapActions(['getIdeas', 'upVoteIdea'])
+    ...mapActions(['getIdeas', 'upVoteIdea', 'downVoteIdea'])
   },
   computed: {
     ...mapState(['ideas'])

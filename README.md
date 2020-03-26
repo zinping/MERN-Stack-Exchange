@@ -17,7 +17,10 @@ A MEVN Full-stack app using MongoDB, Express.js, Vue and Node.js.
 
 ## General info
 
-The project is a MEVN full stack: a client-side for the frontend Vue framework and a server-side for the backend calls.
+* The project is a MEVN full stack: a client-side for the frontend Vue framework and a server-side for the backend calls
+* [Vue Router](https://router.vuejs.org/guide/essentials/navigation.html) used to navigate pages in browser
+* [Node.js MongoDB Driver API](http://mongodb.github.io/node-mongodb-native/3.5/api/Collection.html#findOne) documentation used to create code for collection `find`, `findOne`, `insertOne`, etc.
+* [Vuex](https://vuex.vuejs.org/api/#vuex-store) store used to 
 
 ### MongoDB shell commands
 
@@ -44,6 +47,7 @@ The project is a MEVN full stack: a client-side for the frontend Vue framework a
 * [Vue v2.6.11](https://vuejs.org/)
 * [Vuex v3.1.2](https://vuex.vuejs.org/) state management
 * [Vue.js devtools chrome extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
+* [Vuetify Material Design](https://vuetifyjs.com/en/)
 * [Axios v0.19.2](https://www.npmjs.com/package/axios)
 
 ## Setup - Backend

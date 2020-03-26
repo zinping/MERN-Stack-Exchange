@@ -53,7 +53,7 @@ app.delete("/ideas/:ideaId/votes", async (req, res) => {
   const idea = await collection.findOne({
     _id: new ObjectId(ideaId)
   });
-  idea.votes = (idea.votes || 0) + 1;
+  idea.votes = (idea.votes || 0) - 1;
   await collection.updateOne(
     {
       _id: new ObjectId(ideaId)
