@@ -1,8 +1,12 @@
 # mevn-stack-exchange
 
 A MEVN full-stack app using MongoDB, Express.js, Vue and Node.js. User can create an idea and it is added to an ideas list. Each idea can be voted up and down with idea text and total votes shown in a Vue v-card.
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-**Note: to open web links in a new window use: _ctrl+click on link_**
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/mevn-stack-exchange?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/mevn-stack-exchange?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/mevn-stack-exchange?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/mevn-stack-exchange?style=plastic)
 
 ## Table of contents
 
@@ -44,8 +48,8 @@ A MEVN full-stack app using MongoDB, Express.js, Vue and Node.js. User can creat
 
 ## Technologies - Frontend
 
-* [Vue v2.6.11](https://vuejs.org/)
-* [Vuex v3.1.2](https://vuex.vuejs.org/) state management
+* [Vue v2](https://vuejs.org/)
+* [Vuex v3](https://vuex.vuejs.org/) state management
 * [Vue.js devtools chrome extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
 * [Vuetify Material Design](https://vuetifyjs.com/en/) for v-card, v-textarea etc-
 * [Axios v0.19.2](https://www.npmjs.com/package/axios)
