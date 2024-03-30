@@ -118,6 +118,10 @@ export const getIdeas = async () => {
 * [Web Dev Junkie, Youtube: Live Coding a Full Stack Idea App with Vue, Express, and Mongo](https://www.youtube.com/watch?v=myJRnwzw5ss)
 * [Vue CLI 3 - Creating our Project](https://www.vuemastery.com/courses/real-world-vue-js/vue-cli/)
 
-## Contact
+## :file_folder: License
 
-Repo created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
+* N/A.
+
+## :envelope: Contact
+
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
